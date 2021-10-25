@@ -1,6 +1,6 @@
 # Network Security & Cryptography Lab Programs
 
-This site contains python code for all cryptographic algorithms
+This repository contains python code for all cryptographic algorithms
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/theskinnycoder/nsc/blob/main/LICENSE)
 
