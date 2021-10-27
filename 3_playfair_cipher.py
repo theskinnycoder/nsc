@@ -8,6 +8,9 @@ def create_key_matrix(key):
 
     # NOTE: Skip J in the alphabets for 25 letters (5*5)
     alphabets_array = list("ABCDEFGHIKLMNOPQRSTUVWXYZ")
+    if mtx.count('J') > 0:
+        alphabets_array = list("ABCDEFGHJKLMNOPQRSTUVWXYZ")
+    
     for letter in alphabets_array:
         if letter not in mtx:
             mtx.append(letter)
@@ -41,15 +44,16 @@ def find_position(key_matrix, letter):
         for j in range(5):
             if key_matrix[i][j] == letter:
                 x, y = i, j
+                break
     return x, y
 
 
-def encrypt(message, key_matrix):
+def encrypt(digraphs_array, key_matrix):
     cipher = []
-    
-    for e in message:
-        p1, q1 = find_position(key_matrix, e[0])
-        p2, q2 = find_position(key_matrix, e[1])
+
+    for pair in digraphs_array:
+        p1, q1 = find_position(key_matrix, pair[0])
+        p2, q2 = find_position(key_matrix, pair[1])
         if p1 == p2:
             if q1 == 4:
                 q1 = -1

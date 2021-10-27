@@ -3,7 +3,7 @@ def euclidean_gcd(a, b):
     # a > b, always. Else, swap them.
     if b > a:
         a, b = b, a
-    while(b):
+    while b:
         a, b = b, a % b
     return a
 
