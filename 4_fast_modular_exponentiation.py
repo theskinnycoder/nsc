@@ -2,7 +2,7 @@
 def mod_exp(base, power, mod):
     if power == 0:
         return 1
-    elif power & 1 == 0:
+    elif power % 2 == 0:
         temp = mod_exp(base, power // 2, mod)
         return temp ** 2 % mod
     else:
