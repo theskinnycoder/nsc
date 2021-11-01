@@ -1,25 +1,29 @@
 # Extended Euclid's Algorithm for Modular Multiplicative Inverse
 def euclidean_mod_inverse(a, b):
-    # a > b, always. Else, swap them.
-    if b > a:
-        a, b = b, a
+    temp = b
 
     # Initialize variables
     t1, t2 = 0, 1
 
-    # Perform extended Euclid's algorithm until b = 0
-    while b:
+    if b == 1:
+        return 0
+ 
+    # Perform extended Euclid's algorithm until a > 1
+    while a > 1:
         quotient, remainder = divmod(a, b)
-
-        # Shifting the values to the left
         a, b = b, remainder
-        t1, t2 = t2, t1 - t2 * quotient
-    return t1
+         
+        t1, t2 = t2 - t1 * quotient, t1
+     
+    if (t2 < 0) :
+        t2 += temp
+ 
+    return t2
 
 
 # Driver Code
 if __name__ == '__main__':
-    num = 3
-    mod = 11
+    num = 10
+    mod = 17
     print(
         f"The Modular Multiplicative Inverse of {num} is : {euclidean_mod_inverse(num, mod)}")
