@@ -1,10 +1,17 @@
 from numpy import array
 
 
+# Remove duplicates from a given array
+def remove_duplicates(arr):
+    seen = set()
+    seen_add = seen.add
+    return [x for x in arr if not (x in seen or seen_add(x))]
+
+
 # Convert key text to 5*5 matrix
 def create_key_matrix(key):
     # Do not repeat any letters in the key (hence convert to set 1st)
-    mtx = list(set(key))
+    mtx = remove_duplicates(list(mtx))
 
     # NOTE: Skip J in the alphabets for 25 letters (5*5)
     alphabets_array = list("ABCDEFGHIKLMNOPQRSTUVWXYZ")

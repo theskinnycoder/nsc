@@ -12,5 +12,5 @@ y = int(pow(G, b, P))
 ka = int(pow(y, a, P))
 kb = int(pow(x, b, P))
 
-print("The secret key of Alice is : {ka}")
-print("The secret Key of Bob is : {kb}")
+print(f"The secret key of Alice is : {ka}")
+print(f"The secret Key of Bob is : {kb}")
