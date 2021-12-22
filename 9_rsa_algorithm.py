@@ -42,7 +42,7 @@ def decrypt(encrypted_msg, d, n):
 
 # Driver Code
 if __name__ == '__main__':
-    plain_msg = 89
+    plain_msg = 12
     p, q = 3, 7
 
     n = p * q
