@@ -10,17 +10,17 @@ def euclidean_mod_inverse(a, b):
 
     if b == 1:
         return 0
- 
+
     # Perform extended Euclid's algorithm until a > 1
     while a > 1:
         quotient, remainder = divmod(a, b)
         a, b = b, remainder
-         
+
         t1, t2 = t2 - t1 * quotient, t1
-     
+
     if (t2 < 0) :
         t2 += temp
- 
+
     return t2
 
 

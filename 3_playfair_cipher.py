@@ -10,7 +10,7 @@ def create_key_matrix(key):
     alphabets_array = list("ABCDEFGHIKLMNOPQRSTUVWXYZ")
     if mtx.count('J') > 0:
         alphabets_array = list("ABCDEFGHJKLMNOPQRSTUVWXYZ")
-    
+
     for letter in alphabets_array:
         if letter not in mtx:
             mtx.append(letter)
@@ -33,7 +33,7 @@ def message_to_digraphs(plain_text):
             digraphs_array.append(pair[0] + 'Z')
         else:
             digraphs_array.append(pair)
-    
+
     return digraphs_array
 
 
@@ -72,7 +72,7 @@ def encrypt(digraphs_array, key_matrix):
         else:
             cipher_array.append(key_matrix[p1][q2])
             cipher_array.append(key_matrix[p2][q1])
-    
+
     return ''.join(char for char in cipher_array)
 
 

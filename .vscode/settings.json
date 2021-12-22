@@ -1,6 +1,5 @@
 {
-    "editor.fontWeight": "bold",
-    "editor.fontSize": 20,
-    "editor.fontFamily": "Cascadia Code ExtraLight",
-    "editor.letterSpacing": -0.1
+  "editor.letterSpacing": -0.5,
+  "editor.lineHeight": 21,
+  "editor.fontWeight": "449"
 }

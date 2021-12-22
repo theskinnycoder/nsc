@@ -1,4 +1,4 @@
-from random import randit
+from random import randint
 
 
 # Fast Modular Exponentiation Algorithm

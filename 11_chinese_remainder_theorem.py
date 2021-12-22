@@ -15,17 +15,17 @@ def euclidean_mod_inverse(a, b):
 
     if b == 1:
         return 0
- 
+
     # Perform extended Euclid's algorithm until a > 1
     while a > 1:
         quotient, remainder = divmod(a, b)
         a, b = b, remainder
-         
+
         t1, t2 = t2 - t1 * quotient, t1
-    
+
     if (t2 < 0) :
         t2 += temp
- 
+
     return t2
 
 
@@ -42,4 +42,4 @@ def chinese_remainder(num_arr, rem_arr):
 if __name__ == '__main__':
     num_arr = [3, 4, 7]
     rem_arr = [1, 1, 0]
-    print(f"The min.m no. that gives {rem_arr} on modulo division with {num_arr} is :  {chinese_remainder(num_arr, rem_arr)}")
+    print(f"The minimum number that gives {rem_arr} on modulo division with {num_arr} is : {chinese_remainder(num_arr, rem_arr)}")
