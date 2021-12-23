@@ -11,7 +11,7 @@ def remove_duplicates(arr):
 # Convert key text to 5*5 matrix
 def create_key_matrix(key):
     # Do not repeat any letters in the key (hence convert to set 1st)
-    mtx = remove_duplicates(list(mtx))
+    mtx = remove_duplicates(list(key))
 
     # NOTE: Skip J in the alphabets for 25 letters (5*5)
     alphabets_array = list("ABCDEFGHIKLMNOPQRSTUVWXYZ")

@@ -1,10 +1,15 @@
 from math import gcd
 
-# Select Public Key
+
+# Get Public Key
 def get_public_key(phi):
     for i in range(2, phi):
         if gcd(i, phi) == 1:
             return i
+
+# Get Private Key
+def get_private_key(e, phi):
+    return (2 * phi + 1) // e
 
 # RSA Encryption Algorithm
 def encrypt(plain_msg, e, n):
@@ -24,8 +29,7 @@ if __name__ == '__main__':
     n = p * q
     phi = (p - 1) * (q - 1)
     e = get_public_key(phi)
-    # d = euclidean_mod_inverse(phi, e)
-    d = (2 * phi + 1) // e
+    d = get_private_key(e, phi)
 
     encrypted_msg = encrypt(plain_msg, e, n)
     decrypted_text = decrypt(encrypted_msg, d, n)
